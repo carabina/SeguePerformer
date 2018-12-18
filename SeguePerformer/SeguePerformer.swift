@@ -8,8 +8,8 @@
 
 import UIKit
 
-/// An object that can be used to initiate segues from a view controller using
-/// closures for view controller preparation.
+/// An object that initiates segues from a view controller using closures for view
+/// controller preparation.
 ///
 /// Unlike `UIViewController.performSegue(withIdentifier:sender:)`, which relies on
 /// `UIViewController.prepare(for:sender:)` to configure the new view controller
