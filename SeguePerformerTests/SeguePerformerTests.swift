@@ -17,7 +17,8 @@ class SeguePerformerTests: XCTestCase {
     private let testSegueIdentifier = "testSegue"
 
     override func setUp() {
-        let storyboard = UIStoryboard(name: "SeguePerformerTests", bundle: Bundle(for: SeguePerformerTests.self))
+        let bundle = Bundle(for: SeguePerformerTests.self)
+        let storyboard = UIStoryboard(name: "SeguePerformerTests", bundle: bundle)
 
         presentingViewController = storyboard.instantiateInitialViewController() as? PresentingViewController
         XCTAssertNotNil(presentingViewController)
