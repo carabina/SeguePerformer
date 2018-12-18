@@ -15,7 +15,7 @@ import UIKit
 /// `UIViewController.prepare(for:sender:)` to configure the new view controller
 /// before it is presented,
 /// `SeguePerformer.peformSegue(withIdentifier:sender:preparationHandler:)` provides
-/// this opportunity a trailing closure parameter.
+/// this functionality via a trailing closure parameter.
 ///
 /// The advantage of this approach is that the view controller preparation logic is
 /// declared locally to the `performSegue` call, rather than separately in
