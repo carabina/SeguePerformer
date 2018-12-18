@@ -14,7 +14,7 @@ class SeguePerformerTests: XCTestCase {
     private var window: UIWindow?
     private var presentingViewController: PresentingViewController?
 
-    private let testString = "whatever"
+    private let testSegueIdentifier = "testSegue"
 
     override func setUp() {
         let storyboard = UIStoryboard(name: "SeguePerformerTests", bundle: Bundle(for: SeguePerformerTests.self))
@@ -39,27 +39,41 @@ class SeguePerformerTests: XCTestCase {
         presentingViewController = nil
     }
 
-    // Tests that SeguePerformer.prepare(for:sender:) is called as expected
-    // when SeguePerformer.performSegue(withIdentifier:sender:) is called.
-    func testPrepareForSegue() {
+    // Tests that the performSegue preparation handler is called.
+    func testPreparationHandler() {
         guard let presentingViewController = presentingViewController else {
-            XCTFail("Presenting view controller is undefined.")
+            XCTFail("The presenting view controller is undefined.")
             return
         }
 
         var hasCalledPreparationHandler = false
 
-        // Peform the test segue, assigning a test string to the presented
-        // view controller.
-        presentingViewController.seguePerformer.performSegue(withIdentifier: "testSegue", sender: self) { (presentedViewController: PresentedViewController) in
+        // Peform the test segue.
+        presentingViewController.seguePerformer.performSegue(withIdentifier: testSegueIdentifier, sender: self) { (presentedViewController: PresentedViewController) in
             hasCalledPreparationHandler = true
-            presentedViewController.testString = self.testString
         }
 
-        // The preparation handler was called because
-        // PresentingViewController.prepare(for:sender:) called
+        // If this succeeds, we know that the preparation handler was called, which will be
+        // the case if PresentingViewController.prepare(for:sender:) called
         // SeguePerformer.prepare(for:sender:), as expected.
         XCTAssert(hasCalledPreparationHandler)
+    }
+
+    // Tests that the performSegue preparation handler can initialize the presented
+    // view controller state.
+    func testPresentedViewControllerState() {
+        guard let presentingViewController = presentingViewController else {
+            XCTFail("The presenting view controller is undefined.")
+            return
+        }
+
+        let testString = "whatever"
+
+        // Peform the test segue, assigning a test string to the presented
+        // view controller.
+        presentingViewController.seguePerformer.performSegue(withIdentifier: testSegueIdentifier, sender: self) { (presentedViewController: PresentedViewController) in
+            presentedViewController.testString = testString
+        }
 
         // A view controller was presented.
         XCTAssertNotNil(presentingViewController.presentedViewController)
