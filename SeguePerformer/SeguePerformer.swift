@@ -63,6 +63,10 @@ public class SeguePerformer {
     /// `UIViewController.prepare(for:sender:)` which calls
     /// `SeguePerformer.prepare(for:sender:)`.
     ///
+    /// Additionally, the trailing closure's view controller parameter type must be
+    /// explicitly declared and must match that of the segue's destination view
+    /// controller.
+    ///
     /// # Example
     ///
     ///     func performMySegue(with myPropertyValue: Int) {
@@ -75,8 +79,9 @@ public class SeguePerformer {
     ///   - identifier: The string that identifies the triggered segue.
     ///   - sender: The object that used to initiate the segue.
     ///   - preparationHandler: The closure that is called to before the segue is performed.
-    ///       - presentedViewController: The presented view controller. This parameter's type must
-    ///           be explicitly declared and match that of the segue's destination view controller.
+    ///       - presentedViewController: The presented view controller. This parameter's type
+    ///           must be explicitly declared and must match that of the segue's destination
+    ///           view controller.
     ///
     public func performSegue<T>(withIdentifier identifier: String, sender: Any?, preparationHandler: ((_ presentedViewController: T) -> Void)?) where T: UIViewController {
         self.segueIdentifier = identifier
