@@ -77,7 +77,7 @@ public class SeguePerformer {
     ///
     /// - Parameters:
     ///   - identifier: The string that identifies the triggered segue.
-    ///   - sender: The object that used to initiate the segue.
+    ///   - sender: The object that initiates the segue.
     ///   - preparationHandler: The closure that is called to before the segue is performed.
     ///       - presentedViewController: The presented view controller. This parameter's type
     ///           must be explicitly declared and must match that of the segue's destination
