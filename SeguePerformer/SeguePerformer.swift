@@ -88,7 +88,7 @@ public class SeguePerformer {
 
         self.seguePreparationHandler = { (segue: UIStoryboardSegue) in
             guard let presentedViewController = segue.destination as? T else {
-                assertionFailure("The presented view controller is type \(type(of: segue.destination).self), which does not match the segue preparation handler parameter type, \(T.self).")
+                assertionFailure("The presented view controller is type \(type(of: segue.destination).self), which does not match the segue preparation handler parameter type \(T.self)")
                 return false
             }
             preparationHandler?(presentedViewController)
