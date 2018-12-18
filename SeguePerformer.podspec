@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'SeguePerformer'
   s.version          = '0.1.0'
-  s.summary          = 'A Swift class for initiating segues from a view controller using closures for view controller preparation.'
+  s.summary          = 'A Swift class for initiating segues using closures for view controller preparation.'
 
   s.description      = <<-DESC
 A downside of UIViewController.performSegue(withIdentifier:sender:) is that
