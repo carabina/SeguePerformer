@@ -21,7 +21,7 @@ import UIKit
 /// to the `performSegue` call, rather than separately in `prepare(for:sender:)`,
 /// which can become unwieldy in the context of multiple `performSegue` calls.
 ///
-class SeguePerformer {
+public class SeguePerformer {
 
     private weak var presentingviewController: UIViewController?
 
@@ -35,7 +35,7 @@ class SeguePerformer {
     ///     as a source of segues later initiated by
     ///     `performSegue(withIdentifier:sender:preparationHandler:)`.
     ///
-    init(viewController: UIViewController) {
+    public init(viewController: UIViewController) {
         self.presentingviewController = viewController
     }
 
@@ -51,15 +51,15 @@ class SeguePerformer {
     /// `UIViewController.prepare(for:sender:)` which calls
     /// `SeguePerformer.prepare(for:sender:)`.
     ///
-    public func performSegue<T: UIViewController>(withIdentifier identifier: String, sender: Any?, preparationHandler: ((_ viewController: T) -> Void)?) {
+    public func performSegue<T: UIViewController>(withIdentifier identifier: String, sender: Any?, preparationHandler: ((_ presentedViewController: T) -> Void)?) {
         self.segueIdentifier = identifier
 
         self.seguePreparationHandler = { (segue: UIStoryboardSegue) in
-            guard let viewController = segue.destination as? T else {
+            guard let presentedViewController = segue.destination as? T else {
                 assertionFailure("The presented view controller is type \(type(of: segue.destination).self), which does not match the segue preparation handler parameter type, \(T.self).")
                 return false
             }
-            preparationHandler?(viewController)
+            preparationHandler?(presentedViewController)
             return true
         }
 
@@ -81,7 +81,7 @@ class SeguePerformer {
     /// otherwise the `preparationHandler` closure passeed to
     /// `performSegue(withIdentifier:sender:preparationHandler:)` will never be called.
     ///
-    public func prepare(for segue: UIStoryboardSegue, sender: Any?) -> Bool {
+    @discardableResult public func prepare(for segue: UIStoryboardSegue, sender: Any?) -> Bool {
         guard segue.identifier == segueIdentifier else {
             return false
         }
