@@ -22,7 +22,6 @@ opportunity to configure the presented view controller via a trailing closure.
                        DESC
 
   s.homepage         = 'https://github.com/milpitas/SeguePerformer'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE.md' }
   s.author           = { 'milpitas' => 'drew.olbrich@gmail.com' }
   s.source           = { :git => 'https://github.com/milpitas/SeguePerformer.git', :tag => s.version.to_s }
