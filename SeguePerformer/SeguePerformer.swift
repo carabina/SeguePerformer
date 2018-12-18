@@ -78,7 +78,7 @@ public class SeguePerformer {
     ///       - presentedViewController: The presented view controller. This parameter's type must
     ///           be explicitly declared and match that of the segue's destination view controller.
     ///
-    public func performSegue<T: UIViewController>(withIdentifier identifier: String, sender: Any?, preparationHandler: ((_ presentedViewController: T) -> Void)?) {
+    public func performSegue<T>(withIdentifier identifier: String, sender: Any?, preparationHandler: ((_ presentedViewController: T) -> Void)?) where T: UIViewController {
         self.segueIdentifier = identifier
 
         self.seguePreparationHandler = { (segue: UIStoryboardSegue) in
