@@ -59,14 +59,24 @@ public class SeguePerformer {
     /// Initiates a segue with the specified identifer, using a closure to configure the
     /// destination view controller.
     ///
+    /// For this method to work properly, the caller must provide an implementation of
+    /// `UIViewController.prepare(for:sender:)` which calls
+    /// `SeguePerformer.prepare(for:sender:)`.
+    ///
+    /// # Example
+    ///
+    ///     func performMySegue(with myPropertyValue: Int) {
+    ///         performSegue(withIdentifier: "mySegue", sender: self) { (myViewController: MyViewController) in
+    ///             myViewController.myProperty = myPropertyValue
+    ///         }
+    ///     }
+    ///
     /// - Parameters:
     ///   - identifier: The string that identifies the triggered segue.
     ///   - sender: The object that used to initiate the segue.
     ///   - preparationHandler: The closure that is called to before the segue is performed.
-    ///
-    /// For this method to work properly, the caller must provide an implementation of
-    /// `UIViewController.prepare(for:sender:)` which calls
-    /// `SeguePerformer.prepare(for:sender:)`.
+    ///       - presentedViewController: The presented view controller. This parameter's type must
+    ///           be explicitly declared and match that of the segue's destination view controller.
     ///
     public func performSegue<T: UIViewController>(withIdentifier identifier: String, sender: Any?, preparationHandler: ((_ presentedViewController: T) -> Void)?) {
         self.segueIdentifier = identifier
