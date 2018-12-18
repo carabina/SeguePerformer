@@ -29,7 +29,7 @@ opportunity to configure the presented view controller via a trailing closure.
 
   s.ios.deployment_target = '11.0'
 
-  s.source_files = 'SeguePerformer'
+  s.source_files = 'SeguePerformer/*.swift'
   
   # s.resource_bundles = {
   #   'Whatever' => ['SeguePerformer/Assets/*.png']
