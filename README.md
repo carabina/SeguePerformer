@@ -28,7 +28,8 @@ multiple `performSegue` calls.
         func performMySegue(with myPropertyValue: Int) {
             // Perform the segue, configuring the destination view controller
             // before it is presented.
-            performSegue(withIdentifier: "mySegue", sender: self) { (myViewController: MyViewController) in
+            performSegue(withIdentifier: "mySegue", sender: self) { 
+                (myViewController: MyViewController) in
                 myViewController.myProperty = myPropertyValue
             }
         }
