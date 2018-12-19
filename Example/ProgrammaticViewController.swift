@@ -1,6 +1,6 @@
 //
 //  ProgrammaticViewController.swift
-//  SeguePerformer
+//  Example
 //
 //  Created by Drew Olbrich on 12/18/18.
 //  Copyright © 2018 Drew Olbrich. All rights reserved.
