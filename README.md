@@ -32,7 +32,11 @@ multiple `performSegue` calls.
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             // For SeguePerformer.performSegue's trailing closure to be called,
             // SeguePerformer must be notified about the prepare(for:sender:) call.
-            seguePerformer.prepare(for: segue, sender: sender)
+            if seguePerformer.prepare(for: segue, sender: sender) {
+                return
+            }
+            
+            // Prepare for interactive segues here, if any.
         }
         
     }
