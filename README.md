@@ -39,10 +39,10 @@ Without `SeguePerformer`, the traditional way of writing this would be:
 
     class MyPresentingViewController: UIViewController {    
     
-        var myPropertyValue: Int?
+        var myViewControllerPropertyValue: Int?
     
         func performMySegue(with myPropertyValue: Int) {
-            self.myPropertyValue = myPropertyValue
+            self.myViewControllerPropertyValue = myPropertyValue
             performSegue(withIdentifier: "mySegue", sender: self)
             // Continues in prepare(for:sender:)...
         }
@@ -51,8 +51,8 @@ Without `SeguePerformer`, the traditional way of writing this would be:
             // Handle the case where the segue's destination view controller was
             // presented by performMySegue(with:) and is of type MyViewController.
             if let myViewController = segue.destinationViewController as? MyViewController, 
-                let myPropertyValue = myPropertyValue {
-                myViewController.myPropertyValue = myPropertyValue
+                let myViewControllerPropertyValue = myViewControllerPropertyValue {
+                myViewController.myPropertyValue = myViewControllerPropertyValue
                 self.myPropertyValue = nil
             }
         }
