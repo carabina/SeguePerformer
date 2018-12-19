@@ -1,16 +1,20 @@
 ### Purpose
 
-The SeguePerformer class initiates UIKit segues using closures for view controller preparation.
+The SeguePerformer class provides an interface for initiating UIKit segues
+programatically, using closures for view controller preparation.
 
-Unlike UIKit's  `UIViewController.performSegue(withIdentifier:sender:)`, which relies on
-`UIViewController.prepare(for:sender:)` to configure the new view controller
-before it is presented,
-`SeguePerformer.peformSegue(withIdentifier:sender:preparationHandler:)` provides
-this functionality via a trailing closure parameter.
+In UIKit's existing programmatic segue presentation interface,
+UIViewController's `performSegue(withIdentifier:sender:)` method relies on a
+separate definition of `prepare(for:sender:)` to configure the new view
+controller before it is presented.
+
+The SeguePerformer class provides its own
+`peformSegue(withIdentifier:sender:preparationHandler:)` method which allows for
+configuration of the new view controller via a trailing closure parameter.
 
 The advantage of this approach is that the view controller preparation logic is
 declared locally to the `performSegue` call, rather than independently in
-`prepare(for:sender:)`, which can become especially  awkward in the context of 
+`prepare(for:sender:)`, which can become particularly awkward in the context of 
 multiple `performSegue` calls.
 
 ### Example
@@ -35,8 +39,8 @@ multiple `performSegue` calls.
             if seguePerformer.prepare(for: segue, sender: sender) {
                 return
             }
-            
-            // Prepare for interactive segues here, if any.
+
+            // Prepare for other interactive segues here, if any.
         }
         
     }
