@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SeguePerformer'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'A Swift class for initiating segues programatically, using closures for view controller preparation.'
 
   s.description      = <<-DESC
@@ -31,7 +31,7 @@ configuration of the new view controller via a trailing closure parameter.
   s.tvos.deployment_target = '11.0'
 
   s.source_files = 'SeguePerformer/*.swift'
-  
+
   # s.resource_bundles = {
   #   'Whatever' => ['SeguePerformer/Assets/*.png']
   # }
