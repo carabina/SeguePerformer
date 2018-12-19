@@ -59,8 +59,6 @@ class MyPresentingViewController: UIViewController {
 Without SeguePerformer, the traditional way of writing this would be:
 
 ```swift
-import UIKit
-
 class MyPresentingViewController: UIViewController {
 
     var myPresentedViewControllerPropertyValue: Int?
