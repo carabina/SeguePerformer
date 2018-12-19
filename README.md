@@ -1,4 +1,6 @@
-### Purpose
+# SeguePerformer
+
+## Purpose
 
 The SeguePerformer class provides an interface for initiating UIKit segues
 programatically, using closures for view controller preparation.
@@ -17,8 +19,17 @@ declared locally to the `performSegue` call, rather than independently in
 `prepare(for:sender:)`, which can become particularly awkward in the context of 
 multiple `performSegue` calls.
 
-### Example
+## Example
 
+To use SeguePerformer, do the following:
+
+1. Add a `seguePerformer` lazy property to your view controller.
+2. Call `seguePerformer.peformSegue(withIdentifier:sender:preparationHandler:)` to initiate segues whose destination view controllers require configuration.
+3. Override your view controller's `prepare(for:sender:)` method, passing its parameters along to `seguePerformer.prepare(for:sender:)`. Without this step, the `preparationHandler` closure will never be called.
+
+For example:
+
+    import UIKit
     import SeguePerformer
 
     class MyPresentingViewController: UIViewController {    
@@ -28,7 +39,7 @@ multiple `performSegue` calls.
         func performMySegue(with myPropertyValue: Int) {
             // Perform the segue, configuring the destination view controller
             // before it is presented.
-            performSegue(withIdentifier: "mySegue", sender: self) { 
+            seguePerformer.performSegue(withIdentifier: "mySegue", sender: self) { 
                 (myViewController: MyViewController) in
                 myViewController.myProperty = myPropertyValue
             }
@@ -48,6 +59,8 @@ multiple `performSegue` calls.
 
 Without SeguePerformer, the traditional way of writing this would be:
 
+    import UIKit
+    
     class MyPresentingViewController: UIViewController {    
     
         var myViewControllerPropertyValue: Int?
@@ -69,7 +82,7 @@ Without SeguePerformer, the traditional way of writing this would be:
         
     }
 
-### Installation
+## Installation
 
 To install SeguePerformer using CocoaPods, add the following to your Podfile:
 
