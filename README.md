@@ -58,12 +58,11 @@ Without SeguePerformer, the traditional way of writing this would be:
         }
 
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            // Handle the case where the segue's destination view controller was
-            // presented by performMySegue(with:) and is of type MyViewController.
             if let myViewController = segue.destinationViewController as? MyViewController, 
                 let myViewControllerPropertyValue = myViewControllerPropertyValue {
+                // ...continued from performMySegue(with:)
                 myViewController.myPropertyValue = myViewControllerPropertyValue
-                self.myPropertyValue = nil
+                self.myViewControllerPropertyValue = nil
             }
         }
         
