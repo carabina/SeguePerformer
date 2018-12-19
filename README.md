@@ -15,7 +15,7 @@ The SeguePerformer class provides a
 configuration of the new view controller via a trailing closure parameter.
 
 The advantage of this approach is that the view controller preparation logic is
-declared locally to the `performSegue` call, rather than independently in
+defined locally to the `performSegue` call, rather than independently in
 `prepare(for:sender:)`, which can become particularly awkward in the context of 
 multiple `performSegue` calls.
 
