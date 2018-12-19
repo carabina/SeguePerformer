@@ -22,11 +22,6 @@ class ClassicSegueViewController: UIViewController {
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let identifier = segue.identifier else {
-            assertionFailure()
-            return
-        }
-
         if let programmaticViewController = segue.destination as? ProgrammaticViewController {
             prepare(programmaticViewController: programmaticViewController, for: segue, sender: sender)
         }
