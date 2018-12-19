@@ -90,6 +90,8 @@ class MyPresentingViewController: UIViewController {
 
 To install SeguePerformer using CocoaPods, add the following to your Podfile:
 
-    pod 'SeguePerformer'
+```
+pod 'SeguePerformer'
+```
 
 Optionally, you may instead drag `SeguePerformer.swift` into your project.
