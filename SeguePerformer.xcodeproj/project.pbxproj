@@ -136,11 +136,11 @@
 			isa = PBXGroup;
 			children = (
 				3AEF62F921C9DDCB0031211D /* AppDelegate.swift */,
+				3AEF630C21C9DE480031211D /* Main.storyboard */,
 				3AEF630A21C9DE480031211D /* SeguePerformerViewController.swift */,
 				3AEF630B21C9DE480031211D /* ClassicSegueViewController.swift */,
 				3AEF630921C9DE480031211D /* InteractiveViewController.swift */,
 				3AEF630D21C9DE480031211D /* ProgrammaticViewController.swift */,
-				3AEF630C21C9DE480031211D /* Main.storyboard */,
 				3AEF630021C9DDCC0031211D /* Assets.xcassets */,
 				3AEF630221C9DDCC0031211D /* LaunchScreen.storyboard */,
 				3AEF630521C9DDCC0031211D /* Info.plist */,
