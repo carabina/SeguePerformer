@@ -40,7 +40,7 @@ multiple `performSegue` calls.
                 return
             }
 
-            // Prepare for interactive segues configured in Storyboard here, if any.
+            // Prepare for interactive segues configured in Storyboard here.
         }
         
     }
