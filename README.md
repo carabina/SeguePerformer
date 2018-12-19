@@ -1,7 +1,6 @@
 ### Purpose
 
-The `SeguePerformer` class initiates UIKit segues from a view controller using closures for view
-controller preparation.
+The `SeguePerformer` class initiates UIKit segues using closures for view controller preparation.
 
 Unlike UIKit's  `UIViewController.performSegue(withIdentifier:sender:)`, which relies on
 `UIViewController.prepare(for:sender:)` to configure the new view controller

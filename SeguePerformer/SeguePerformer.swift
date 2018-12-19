@@ -31,8 +31,7 @@
 
 import UIKit
 
-/// A class that initiates segues from a view controller using closures for view
-/// controller preparation.
+/// A class that initiates segues using closures for view controller preparation.
 ///
 /// Unlike UIKit's `UIViewController.performSegue(withIdentifier:sender:)`, which
 /// relies on `UIViewController.prepare(for:sender:)` to configure the new view
