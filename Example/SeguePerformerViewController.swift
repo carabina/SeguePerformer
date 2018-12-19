@@ -12,6 +12,12 @@ import SeguePerformer
 // View controller that demonstrates using SeguePerformer to initiate segues.
 class SeguePerformerViewController: UIViewController {
 
+    // These outlets are not necessary for the use of SeguePerformer. They are provided
+    // here so that SeguePerformerViewController can be seamlessly swapped out for
+    // ClassicSegueViewController, which requires them.
+    @IBOutlet weak var firstProgrammaticSegueButton: UIButton!
+    @IBOutlet weak var secondProgrammaticSegueButton: UIButton!
+
     private lazy var seguePerformer = SeguePerformer(viewController: self)
 
     @IBAction func performFirstSegue(_ sender: Any) {

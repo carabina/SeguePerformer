@@ -8,6 +8,10 @@
 
 import UIKit
 
+// View controller that demonstrates how SeguePerformerViewController would be
+// implemented using the traditional UIViewController prepare(for:sender:)
+// mechanism. To try out this class, replace the use of
+// SeguePerformerViewController with ClassicSegueViewController in Main.storyboard.
 class ClassicSegueViewController: UIViewController {
 
     @IBOutlet weak var firstProgrammaticSegueButton: UIButton!
@@ -31,13 +35,18 @@ class ClassicSegueViewController: UIViewController {
         }
     }
 
-    func prepare(programmaticViewController: ProgrammaticViewController, for segue: UIStoryboardSegue, sender: Any?) {
+    // Prepares for programmatic segues initiated with performSegue, whose destination
+    // view controllers are of type ProgrammaticViewController.
+    private func prepare(programmaticViewController: ProgrammaticViewController, for segue: UIStoryboardSegue, sender: Any?) {
         assert(segue.identifier == "programmaticSegue")
 
         guard let button = sender as? UIButton else {
             assertionFailure()
             return
         }
+
+        assert(firstProgrammaticSegueButton != nil)
+        assert(secondProgrammaticSegueButton != nil)
 
         switch button {
         case firstProgrammaticSegueButton:
@@ -49,7 +58,9 @@ class ClassicSegueViewController: UIViewController {
         }
     }
 
-    func prepare(interactiveViewController: InteractiveViewController, for segue: UIStoryboardSegue, sender: Any?) {
+    // Prepares for interactive segues configured in Storyboard
+    // whose destination view controllers are of type InteractiveViewController.
+    private func prepare(interactiveViewController: InteractiveViewController, for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
         case "thirdSegue":
             interactiveViewController.setSegueName("Third")
