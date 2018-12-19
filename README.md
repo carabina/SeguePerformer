@@ -69,7 +69,6 @@ Without SeguePerformer, the traditional way of writing this would be:
         
     }
 
-
 ### Installation
 
 To install SeguePerformer using CocoaPods, add the following to your Podfile:
