@@ -69,7 +69,3 @@ To install SeguePerformer using CocoaPods, add the following to your Podfile:
     pod 'SeguePerformer'
 
 Optionally, you may instead copy `SeguePerformer.swift` into your project.
-
-### License
-
-SeguePerformer is released under the MIT license. See [LICENSE.md](https://github.com/SeguePerformer//LICENSE.md) for details.
