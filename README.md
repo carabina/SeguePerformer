@@ -68,4 +68,4 @@ To install SeguePerformer using CocoaPods, add the following to your Podfile:
 
     pod 'SeguePerformer'
 
-Optionally, you may instead copy `SeguePerformer.swift` into your project.
+Optionally, you may instead drag `SeguePerformer.swift` into your project.
