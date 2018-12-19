@@ -9,9 +9,10 @@
 import UIKit
 import SeguePerformer
 
+// View controller that demonstrates using SeguePerformer to initiate segues.
 class SeguePerformerViewController: UIViewController {
 
-    lazy var seguePerformer = SeguePerformer(viewController: self)
+    private lazy var seguePerformer = SeguePerformer(viewController: self)
 
     @IBAction func performFirstSegue(_ sender: Any) {
         seguePerformer.performSegue(withIdentifier: "programmaticSegue", sender: sender) { (programmaticViewController: ProgrammaticViewController) in
@@ -32,13 +33,15 @@ class SeguePerformerViewController: UIViewController {
             return
         }
 
+        // Prepare for interactive segues configured in Storyboard.
         if let interactiveViewController = segue.destination as? InteractiveViewController {
-            // Prepare for the segue using the traditional mechanism.
             prepare(interactiveViewController: interactiveViewController, for: segue)
         }
     }
 
-    func prepare(interactiveViewController: InteractiveViewController, for segue: UIStoryboardSegue) {
+    // Prepares for interactive segues configured in Storyboard
+    // whose destination view controllers are of type InteractiveViewController.
+    private func prepare(interactiveViewController: InteractiveViewController, for segue: UIStoryboardSegue) {
         switch segue.identifier {
         case "thirdSegue":
             interactiveViewController.setSegueName("Third")
