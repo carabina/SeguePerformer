@@ -27,8 +27,6 @@ class ClassicSegueViewController: UIViewController {
             return
         }
 
-        NSLog("Preparing for segue: \(identifier)")
-
         if let programmaticViewController = segue.destination as? ProgrammaticViewController {
             prepare(programmaticViewController: programmaticViewController, for: segue, sender: sender)
         }
