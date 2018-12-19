@@ -53,7 +53,7 @@ Without SeguePerformer, the traditional way of writing this would be:
         var myViewControllerPropertyValue: Int?
     
         func performMySegue(with myPropertyValue: Int) {
-            self.myViewControllerPropertyValue = myPropertyValue
+            myViewControllerPropertyValue = myPropertyValue
             performSegue(withIdentifier: "mySegue", sender: self)
             // Continues in prepare(for:sender:)...
         }
