@@ -14,7 +14,7 @@
 		3A6A0C6A21C957E80011625B /* SeguePerformerTests.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3A6A0C6921C957E80011625B /* SeguePerformerTests.storyboard */; };
 		3A6A0C6C21C976360011625B /* PresentingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6A0C6B21C976360011625B /* PresentingViewController.swift */; };
 		3A6A0C6E21C9783C0011625B /* PresentedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A6A0C6D21C9783C0011625B /* PresentedViewController.swift */; };
-		3AC7081321C9B0E600A4576A /* SeguePerformer.podspec in Resources */ = {isa = PBXBuildFile; fileRef = 3AC7081221C9B0E600A4576A /* SeguePerformer.podspec */; };
+		3AC7081621C9C1DC00A4576A /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 3A1BBF1C21C94600007D24C8 /* LICENSE.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +40,7 @@
 		3A6A0C6B21C976360011625B /* PresentingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentingViewController.swift; sourceTree = "<group>"; };
 		3A6A0C6D21C9783C0011625B /* PresentedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentedViewController.swift; sourceTree = "<group>"; };
 		3AC7081221C9B0E600A4576A /* SeguePerformer.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SeguePerformer.podspec; sourceTree = "<group>"; };
+		3AC7081421C9C1D000A4576A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +65,7 @@
 		3A1BBEF821C945A8007D24C8 = {
 			isa = PBXGroup;
 			children = (
+				3AC7081421C9C1D000A4576A /* README.md */,
 				3A1BBF1C21C94600007D24C8 /* LICENSE.md */,
 				3AC7081221C9B0E600A4576A /* SeguePerformer.podspec */,
 				3A1BBF0421C945A8007D24C8 /* SeguePerformer */,
@@ -195,7 +197,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3AC7081321C9B0E600A4576A /* SeguePerformer.podspec in Resources */,
+				3AC7081621C9C1DC00A4576A /* LICENSE.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
