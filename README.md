@@ -28,7 +28,6 @@ multiple `performSegue` calls.
 ## Example
 
 ```swift
-import UIKit
 import SeguePerformer
 
 class MyPresentingViewController: UIViewController {
