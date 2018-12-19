@@ -15,6 +15,8 @@ multiple `performSegue` calls.
 
 ### Example
 
+    import SeguePerformer
+
     class MyPresentingViewController: UIViewController {    
     
         lazy var seguePerformer = SeguePerformer(viewController: self)
