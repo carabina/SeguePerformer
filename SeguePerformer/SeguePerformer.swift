@@ -131,7 +131,7 @@ public class SeguePerformer {
     ///
     /// - Returns: `true` if the segue was initiated by an earlier call to
     ///     `performSegue(withIdentifier:sender:preparationHandler:)` or `false` if it was
-    ///     initiated by a traditional call to `UIViewController.prepare(for:sender:)`.
+    ///     initiated by a call to `UIViewController.prepare(for:sender:)`.
     ///
     /// This method must be called by `UIViewController.prepare(for:sender:)`, or
     /// otherwise the `preparationHandler` closure passeed to
