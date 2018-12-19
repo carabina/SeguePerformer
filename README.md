@@ -40,8 +40,8 @@ For example:
             // Perform the segue, configuring the destination view controller
             // before it is presented.
             seguePerformer.performSegue(withIdentifier: "mySegue", sender: self) { 
-                (myViewController: MyViewController) in
-                myViewController.myProperty = myPropertyValue
+                (myPresentedViewController: MyPresentedViewController) in
+                myPresentedViewController = myPropertyValue
             }
         }
 
@@ -63,7 +63,7 @@ Without SeguePerformer, the traditional way of writing this would be:
     
     class MyPresentingViewController: UIViewController {    
     
-        var myViewControllerPropertyValue: Int?
+        var myPresentedViewControllerPropertyValue: Int?
     
         func performMySegue(with myPropertyValue: Int) {
             myViewControllerPropertyValue = myPropertyValue
@@ -73,10 +73,10 @@ Without SeguePerformer, the traditional way of writing this would be:
 
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             if let myViewController = segue.destinationViewController as? MyViewController, 
-                let myViewControllerPropertyValue = myViewControllerPropertyValue {
+                let myPresentedViewControllerPropertyValue = myPresentedViewControllerPropertyValue {
                 // ...continued from performMySegue(with:)
-                myViewController.myPropertyValue = myViewControllerPropertyValue
-                self.myViewControllerPropertyValue = nil
+                myPresentedViewControllerPropertyValue.myPropertyValue = myPresentedViewControllerPropertyValue
+                self.myPresentedViewControllerPropertyValue = nil
             }
         }
         
