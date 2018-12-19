@@ -57,7 +57,8 @@ import UIKit
 ///             }
 ///         }
 ///
-///         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+///         override func prepare(for segue: UIStoryboardSegue,
+///             sender: Any?) {
 ///             seguePerformer.prepare(for: segue, sender: sender)
 ///         }
 ///
