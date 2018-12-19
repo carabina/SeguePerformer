@@ -60,26 +60,26 @@ For example:
 Without SeguePerformer, the traditional way of writing this would be:
 
     import UIKit
-    
-    class MyPresentingViewController: UIViewController {    
-    
+
+    class MyPresentingViewController: UIViewController {
+
         var myPresentedViewControllerPropertyValue: Int?
-    
+
         func performMySegue(with myPropertyValue: Int) {
-            myViewControllerPropertyValue = myPropertyValue
+            myPresentedViewControllerPropertyValue = myPropertyValue
             performSegue(withIdentifier: "mySegue", sender: self)
             // Continues in prepare(for:sender:)...
         }
 
         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if let myViewController = segue.destinationViewController as? MyViewController, 
+            if let myPresentedViewController = segue.destination as? MyPresentedViewController,
                 let myPresentedViewControllerPropertyValue = myPresentedViewControllerPropertyValue {
                 // ...continued from performMySegue(with:)
-                myPresentedViewControllerPropertyValue.myPropertyValue = myPresentedViewControllerPropertyValue
+                myPresentedViewController.myProperty = myPresentedViewControllerPropertyValue
                 self.myPresentedViewControllerPropertyValue = nil
             }
         }
-        
+
     }
 
 ## Installation
