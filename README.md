@@ -29,58 +29,62 @@ To use SeguePerformer, do the following:
 
 For example:
 
-    import UIKit
-    import SeguePerformer
+```swift
+import UIKit
+import SeguePerformer
 
-    class MyPresentingViewController: UIViewController {    
+class MyPresentingViewController: UIViewController {
     
-        lazy var seguePerformer = SeguePerformer(viewController: self)
+    lazy var seguePerformer = SeguePerformer(viewController: self)
 
-        func performMySegue(with myPropertyValue: Int) {
-            // Perform the segue, configuring the destination view controller
-            // before it is presented.
-            seguePerformer.performSegue(withIdentifier: "mySegue", sender: self) { 
-                (myPresentedViewController: MyPresentedViewController) in
-                myPresentedViewController.myProperty = myPropertyValue
-            }
+    func performMySegue(with myPropertyValue: Int) {
+        // Perform the segue, configuring the destination view controller
+        // before it is presented.
+        seguePerformer.performSegue(withIdentifier: "mySegue", sender: self) {
+            (myPresentedViewController: MyPresentedViewController) in
+            myPresentedViewController.myProperty = myPropertyValue
         }
-
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            // For SeguePerformer.performSegue's trailing closure to be called,
-            // SeguePerformer must be notified about the prepare(for:sender:) call.
-            if seguePerformer.prepare(for: segue, sender: sender) {
-                return
-            }
-
-            // Prepare for interactive segues configured in Storyboard here.
-        }
-        
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // For SeguePerformer.performSegue's trailing closure to be called,
+        // SeguePerformer must be notified about the prepare(for:sender:) call.
+        if seguePerformer.prepare(for: segue, sender: sender) {
+            return
+        }
+
+        // Prepare for interactive segues configured in Storyboard here.
+    }
+ 
+}
+```
 
 Without SeguePerformer, the traditional way of writing this would be:
 
-    import UIKit
+```swift
+import UIKit
 
-    class MyPresentingViewController: UIViewController {
+class MyPresentingViewController: UIViewController {
 
-        var myPresentedViewControllerPropertyValue: Int?
+    var myPresentedViewControllerPropertyValue: Int?
 
-        func performMySegue(with myPropertyValue: Int) {
-            myPresentedViewControllerPropertyValue = myPropertyValue
-            performSegue(withIdentifier: "mySegue", sender: self)
-            // Continues in prepare(for:sender:)...
-        }
-
-        override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if let myPresentedViewController = segue.destination as? MyPresentedViewController,
-                let myPresentedViewControllerPropertyValue = myPresentedViewControllerPropertyValue {
-                // ...continued from performMySegue(with:)
-                myPresentedViewController.myProperty = myPresentedViewControllerPropertyValue
-                self.myPresentedViewControllerPropertyValue = nil
-            }
-        }
-
+    func performMySegue(with myPropertyValue: Int) {
+        myPresentedViewControllerPropertyValue = myPropertyValue
+        performSegue(withIdentifier: "mySegue", sender: self)
+        // Continues in prepare(for:sender:)...
     }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let myPresentedViewController = segue.destination as? MyPresentedViewController,
+            let myPresentedViewControllerPropertyValue = myPresentedViewControllerPropertyValue {
+            // ...continued from performMySegue(with:)
+            myPresentedViewController.myProperty = myPresentedViewControllerPropertyValue
+            self.myPresentedViewControllerPropertyValue = nil
+        }
+    }
+
+}
+```
 
 ## Installation
 
