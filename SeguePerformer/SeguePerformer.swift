@@ -94,7 +94,8 @@ public class SeguePerformer {
     /// # Example
     ///
     ///     func performMySegue(with myPropertyValue: Int) {
-    ///         performSegue(withIdentifier: "mySegue", sender: self) { (myViewController: MyViewController) in
+    ///         performSegue(withIdentifier: "mySegue", sender: self) {
+    ///             (myViewController: MyViewController) in
     ///             myViewController.myProperty = myPropertyValue
     ///         }
     ///     }
