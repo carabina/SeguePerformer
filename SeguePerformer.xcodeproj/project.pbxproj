@@ -23,6 +23,7 @@
 		3AEF631021C9DE480031211D /* ClassicSegueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEF630B21C9DE480031211D /* ClassicSegueViewController.swift */; };
 		3AEF631121C9DE480031211D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3AEF630C21C9DE480031211D /* Main.storyboard */; };
 		3AEF631221C9DE480031211D /* ProgrammaticViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AEF630D21C9DE480031211D /* ProgrammaticViewController.swift */; };
+		3AEF633A21CAA9C60031211D /* SeguePerformer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A1BBF0221C945A8007D24C8 /* SeguePerformer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AEF633A21CAA9C60031211D /* SeguePerformer.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,6 +99,7 @@
 				3A1BBF0F21C945A9007D24C8 /* SeguePerformerTests */,
 				3AEF62F821C9DDCB0031211D /* Example */,
 				3A1BBF0321C945A8007D24C8 /* Products */,
+				3AEF633921CAA9C60031211D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -146,6 +149,13 @@
 				3AEF630521C9DDCC0031211D /* Info.plist */,
 			);
 			path = Example;
+			sourceTree = "<group>";
+		};
+		3AEF633921CAA9C60031211D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
