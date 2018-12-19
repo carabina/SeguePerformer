@@ -8,23 +8,24 @@
 
 import UIKit
 
-/// An object that initiates segues from a view controller using closures for view
+/// A class that initiates segues from a view controller using closures for view
 /// controller preparation.
 ///
-/// Unlike `UIViewController.performSegue(withIdentifier:sender:)`, which relies on
-/// `UIViewController.prepare(for:sender:)` to configure the new view controller
-/// before it is presented,
+/// Unlike UIKit's `UIViewController.performSegue(withIdentifier:sender:)`, which
+/// relies on `UIViewController.prepare(for:sender:)` to configure the new view
+/// controller before it is presented,
 /// `SeguePerformer.peformSegue(withIdentifier:sender:preparationHandler:)` provides
 /// this functionality via a trailing closure parameter.
 ///
 /// The advantage of this approach is that the view controller preparation logic is
-/// declared locally to the `performSegue` call, rather than separately in
-/// `prepare(for:sender:)`, which can become unwieldy in the context of multiple
+/// declared locally to the `performSegue` call, rather than independently in
+/// `prepare(for:sender:)`, which can become awkward in the context of multiple
 /// `performSegue` calls.
 ///
 /// # Example
 ///
-///     class PresentingViewController: UIViewController {
+///     class MyPresentingViewController: UIViewController {
+///
 ///         lazy var seguePerformer = SeguePerformer(viewController: self)
 ///
 ///         func performMySegue(with myPropertyValue: Int) {
@@ -36,6 +37,7 @@ import UIKit
 ///         override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 ///             seguePerformer.prepare(for: segue, sender: sender)
 ///         }
+///
 ///     }
 ///
 public class SeguePerformer {
