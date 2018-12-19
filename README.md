@@ -41,7 +41,7 @@ For example:
             // before it is presented.
             seguePerformer.performSegue(withIdentifier: "mySegue", sender: self) { 
                 (myPresentedViewController: MyPresentedViewController) in
-                myPresentedViewController = myPropertyValue
+                myPresentedViewController.myProperty = myPropertyValue
             }
         }
 
