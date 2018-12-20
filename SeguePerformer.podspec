@@ -20,7 +20,6 @@ configuration of the new view controller via a trailing closure parameter.
   s.social_media_url = 'https://twitter.com/drewolbrich'
 
   s.ios.deployment_target = '11.0'
-  s.tvos.deployment_target = '11.0'
 
   s.source_files = 'SeguePerformer/*.swift'
 
