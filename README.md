@@ -1,5 +1,7 @@
 # SeguePerformer
 
+![](https://img.shields.io/travis/milpitas/SeguePerformer.svg)
+
 ## Purpose
 
 The SeguePerformer class provides an interface for initiating UIKit segues
