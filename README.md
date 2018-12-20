@@ -1,6 +1,6 @@
 # SeguePerformer
 
-## Purpose
+## Introduction
 
 The SeguePerformer class provides an interface for initiating UIKit segues
 programatically, using closures for view controller preparation.
