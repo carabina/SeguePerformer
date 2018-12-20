@@ -27,7 +27,7 @@ multiple `performSegue` calls.
 
 ## Usage
 
-1. Add a `seguePerformer` lazy property to your view controller.
+1. Add a lazy `seguePerformer` property to your view controller.
 2. Call `seguePerformer.performSegue(withIdentifier:sender:preparationHandler:)` to initiate segues whose destination view controllers require configuration.
 3. Override your view controller's `prepare(for:sender:)` method, passing its parameters along to `seguePerformer.prepare(for:sender:)`. Without this step, the `preparationHandler` closure will never be called.
 
