@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'SeguePerformer'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'A Swift class for initiating segues programatically, using closures for view controller preparation'
 
   s.description      = <<-DESC
