@@ -3,7 +3,7 @@
 [![Travis](https://img.shields.io/travis/milpitas/SeguePerformer.svg)](https://travis-ci.org/milpitas/SeguePerformer)
 [![Platforms](https://img.shields.io/badge/platforms-iOS-lightgray.svg)]()
 [![Swift 4.2](https://img.shields.io/badge/swift-4.2-red.svg?style=flat)](https://developer.apple.com/swift)
-[![License](https://img.shields.io/badge/license-MIT-lightgrey.svg)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/github/license/milpitas/SeguePerformer.svg)](https://opensource.org/licenses/MIT)
 [![Twitter](https://img.shields.io/badge/twitter-@drewolbrich-blue.svg)](http://twitter.com/drewolbrich)
 
 ## Purpose
@@ -22,7 +22,7 @@ configuration of the new view controller via a trailing closure parameter.
 
 The advantage of this approach is that the view controller preparation logic is
 defined locally to the `performSegue` call, rather than independently in
-`prepare(for:sender:)`, which can become particularly awkward in the context of 
+`prepare(for:sender:)`, which can become particularly awkward in the context of
 multiple `performSegue` calls.
 
 ## Usage
@@ -37,7 +37,7 @@ multiple `performSegue` calls.
 import SeguePerformer
 
 class MyPresentingViewController: UIViewController {
-    
+
     lazy var seguePerformer = SeguePerformer(viewController: self)
 
     func performMySegue(with myPropertyValue: Int) {
@@ -58,7 +58,7 @@ class MyPresentingViewController: UIViewController {
 
         // Prepare for interactive segues configured in Storyboard here.
     }
- 
+
 }
 ```
 
