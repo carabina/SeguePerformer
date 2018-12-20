@@ -13,17 +13,13 @@ programatically, using closures for view controller preparation.
 
 In UIKit's existing programmatic segue presentation interface,
 UIViewController's `performSegue(withIdentifier:sender:)` method relies on a
-separate definition of `prepare(for:sender:)` to configure the new view
-controller before it is presented.
+non-local definition of `prepare(for:sender:)` to configure the new view
+controller before it is presented. This can become unweildy in the context
+of multiple `performSegue` calls.
 
 SeguePerformer improves upon this by providing a
 `performSegue(withIdentifier:sender:preparationHandler:)` method which allows for
 configuration of the new view controller via a trailing closure parameter.
-
-The advantage of this approach is that the view controller preparation logic is
-defined locally to the `performSegue` call, rather than independently in
-`prepare(for:sender:)`, which can become particularly awkward in the context of
-multiple `performSegue` calls.
 
 ## Usage
 
