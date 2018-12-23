@@ -21,6 +21,16 @@ SeguePerformer improves upon this by providing a
 `performSegue(withIdentifier:sender:preparationHandler:)` method which allows for
 configuration of the new view controller via a trailing closure parameter.
 
+## Installation
+
+To install SeguePerformer using CocoaPods, add the following to your Podfile:
+
+```
+pod 'SeguePerformer'
+```
+
+Or, if you prefer, drag `SeguePerformer.swift` into your project.
+
 ## Usage
 
 1. Add a lazy `seguePerformer` property to your view controller.
@@ -82,13 +92,3 @@ class MyPresentingViewController: UIViewController {
 
 }
 ```
-
-## Installation
-
-To install SeguePerformer using CocoaPods, add the following to your Podfile:
-
-```
-pod 'SeguePerformer'
-```
-
-If you prefer, you may instead drag `SeguePerformer.swift` into your project.
