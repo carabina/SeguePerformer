@@ -99,7 +99,6 @@
 				3A1BBF0F21C945A9007D24C8 /* SeguePerformerTests */,
 				3AEF62F821C9DDCB0031211D /* Example */,
 				3A1BBF0321C945A8007D24C8 /* Products */,
-				3AEF633921CAA9C60031211D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -149,13 +148,6 @@
 				3AEF630521C9DDCC0031211D /* Info.plist */,
 			);
 			path = Example;
-			sourceTree = "<group>";
-		};
-		3AEF633921CAA9C60031211D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
